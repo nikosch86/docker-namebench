@@ -15,3 +15,4 @@ RUN set -x && wget https://storage.googleapis.com/google-code-archive-downloads/
   && chmod +x namebench.py
 
 ENTRYPOINT ["./namebench.py"]
+CMD ["-x"]
