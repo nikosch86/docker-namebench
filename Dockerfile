@@ -1,10 +1,8 @@
-FROM python:2.7-slim
+FROM python:2.7-alpine
 
 ENV VERSION 1.3.1
 
-RUN set -x && apt-get update && apt-get -y install wget --no-install-recommends \
-  && apt-get clean && apt-get -y autoremove \
-  && rm -rf /var/lib/apt/lists/*
+RUN set -x && apk add wget
 
 WORKDIR /namebench
 RUN set -x && wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/namebench/namebench-${VERSION}-source.tgz \
